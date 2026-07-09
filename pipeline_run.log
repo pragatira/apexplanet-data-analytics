@@ -1,0 +1,13 @@
+2026-06-18 04:03:25,641 | INFO | ===== ApexPlanet E-commerce Pipeline run started =====
+2026-06-18 04:03:25,642 | INFO | Loading raw data from /home/claude/apexplanet-data-analytics/data/ecommerce_sales_raw.csv
+2026-06-18 04:03:25,661 | INFO | Loaded 6090 rows, 18 columns
+2026-06-18 04:03:25,661 | INFO | Cleaning data...
+2026-06-18 04:03:25,683 | INFO | Removed 89 duplicate rows
+2026-06-18 04:03:25,697 | INFO | Capped 247 outlier rows in Net_Sales using IQR method
+2026-06-18 04:03:25,703 | INFO | Cleaning complete. Final shape: 6001 rows, 23 columns
+2026-06-18 04:03:25,786 | INFO | Saved cleaned dataset to /home/claude/apexplanet-data-analytics/data/ecommerce_sales_cleaned.csv
+2026-06-18 04:03:25,786 | INFO | Calculating KPIs...
+2026-06-18 04:03:25,811 | INFO | KPI calculation complete.
+2026-06-18 04:03:25,812 | INFO | Exporting KPIs to Excel workbook: /home/claude/apexplanet-data-analytics/reports/ecommerce_kpi_report.xlsx
+2026-06-18 04:03:25,952 | INFO | Excel export complete.
+2026-06-18 04:03:25,952 | INFO | ===== Pipeline run completed successfully =====

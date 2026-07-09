@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ApexPlanet E-commerce Sales — Interactive Chart</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; background:#0f1024; color:#eee; margin:0; padding:24px; }
+  h1 { color:#8db0ff; }
+  .chart-box { background:#16183a; border-radius:12px; padding:20px; margin-bottom:30px; max-width:900px; }
+</style>
+</head>
+<body>
+<h1>ApexPlanet — E-commerce Sales Interactive Dashboard (Python Export)</h1>
+<div class="chart-box"><canvas id="monthlyChart" height="320"></canvas></div>
+<div class="chart-box"><canvas id="categoryChart" height="320"></canvas></div>
+<script>
+new Chart(document.getElementById('monthlyChart'), {
+  type: 'line',
+  data: {
+    labels: ["2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12"],
+    datasets: [{ label: 'Monthly Net Sales (₹)', data: [1299156.29, 859524.19, 1261543.27, 1314710.9, 1451414.38, 1137207.83, 1289729.11, 1210996.05, 1593465.85, 2327546.38, 2396414.83, 2508785.28, 1759919.95, 1340981.03, 2026759.58, 1346365.24, 1294638.31, 1124928.45, 1308423.82, 1429329.51, 1341699.82, 2038809.07, 2427520.72, 2557495.79],
+      borderColor: '#4C72B0', backgroundColor: 'rgba(76,114,176,0.2)', tension: 0.3, fill:true }]
+  },
+  options: { plugins: { title: { display:true, text:'Monthly Net Sales Trend', color:'#eee' } },
+              scales: { x: { ticks: { color:'#ccc' } }, y: { ticks: { color:'#ccc' } } } }
+});
+new Chart(document.getElementById('categoryChart'), {
+  type: 'bar',
+  data: {
+    labels: ["Electronics", "Home & Kitchen", "Fashion", "Sports & Outdoors", "Beauty & Personal Care", "Books & Stationery"],
+    datasets: [{ label: 'Total Sales by Category (₹)', data: [13088800.16, 8140634.95, 7482966.9, 5913465.19, 3058308.7, 963189.75],
+      backgroundColor: ['#4C72B0','#DD8452','#55A868','#C44E52','#8172B2','#64B5CD'] }]
+  },
+  options: { plugins: { title: { display:true, text:'Total Sales by Category', color:'#eee' } },
+              scales: { x: { ticks: { color:'#ccc' } }, y: { ticks: { color:'#ccc' } } } }
+});
+</script>
+</body>
+</html>
